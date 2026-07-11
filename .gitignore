@@ -8,4 +8,4 @@
 # Ignore variable files (optional)
 *.tfvars
 *.tfvars.json
-
+.terraform.lock.hcl
