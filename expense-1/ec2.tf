@@ -1,15 +1,13 @@
-resource "aws_instance" "expense1"{
- count = length(var.instance_names)
- ami = data.aws_ami.devops.id
- instance_type = var.instance_names[count.index] == "frontend" ? "t3.micro" : "t3.small"
+resource "aws_instance" "terraform" {
+ ami = "ami-09c813fb71547fc4f"
+ for_each = var.instance_name
+ instance_type = each.value
  vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
 
- tags =merge(
-    var.common_tags,
-    {
-    Name = var.instance_names[count.index]
-     }
-  )
+ tags = {
+    Name = each.key
+ }
+
 
 }
  

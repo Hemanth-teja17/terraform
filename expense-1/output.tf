@@ -1,3 +1,3 @@
-output "instances_info" {
-    value = aws_instance.expense1
+output "expense_instance" {
+    value = aws_instance.terraform
 }
