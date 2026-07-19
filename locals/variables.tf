@@ -16,9 +16,9 @@ variable "common_tags"{
     }
 }
 
-# variable "zone_id"{
-#     default = "Z05483183URFWSF0B1Q10"
-# }
+variable "zone_id"{
+    default = "Z05483183URFWSF0B1Q10"
+}
 
 variable "zone_names"{
     default = "instance_names.[count.undex]"
